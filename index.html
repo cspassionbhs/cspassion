@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CS Passion | Home</title>
+  <style>
+    :root {
+      --bg-dark: #121212;
+      --bg-light: #ffffff;
+      --text-dark: #ffffff;
+      --text-light: #000000;
+      --accent: #f56642;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background-color: var(--accent);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      color: #000;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .quote {
+      font-style: italic;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #000;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .emoji-toggle {
+      cursor: pointer;
+      font-size: 20px;
+      margin-left: 20px;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .main-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    .main-content p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    footer {
+      background-color: #000;
+      color: var(--text-dark);
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Light mode */
+    body.light-mode {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body.light-mode .logo-container,
+    body.light-mode nav a,
+    body.light-mode .quote {
+      color: #000;
+    }
+
+    body.light-mode .main-content h1 {
+      color: #000;
+    }
+
+    body.light-mode footer {
+      background-color: #f0f0f0;
+    }
+
+    body.light-mode footer a {
+      color: #f56642;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <div class="logo">CS Passion</div>
+      <div class="quote">"No amount of money ever bought a second of time." — Howard Stark</div>
+    </div>
+    <nav>
+      <a href="sit.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="projects.html">Projects</a>
+      <a href="submit.html">Submit</a>
+      <span class="emoji-toggle" onclick="toggleTheme()">🌙 / ☀️</span>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <h1>Welcome to CS Passion</h1>
+    <p>
+      This is a platform for students to share their computer science projects and articles with the school and the broader community. Explore amazing work, read insightful content, or submit your own ideas and innovations.
+    </p>
+  </div>
+
+  <footer>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="submit.html">Submit a Project</a>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("light-mode");
+    }
+  </script>
+
+</body>
+</html>
+

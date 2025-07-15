@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Articles | CS Passion</title>
+  <style>
+    :root {
+      --bg-dark: #121212;
+      --bg-light: #ffffff;
+      --text-dark: #ffffff;
+      --text-light: #000000;
+      --accent: #f56642;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    header {
+      background-color: var(--accent);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    nav a {
+      color: #000;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .emoji-toggle {
+      cursor: pointer;
+      font-size: 20px;
+      margin-left: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #000;
+      color: var(--text-dark);
+      padding: 1.5rem 1rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    body.light-mode {
+      background-color: var(--bg-light);
+      color: var(--text-light);
+    }
+
+    body.light-mode footer {
+      background-color: #f0f0f0;
+    }
+
+    body.light-mode footer a {
+      color: var(--accent);
+    }
+
+    body.light-mode nav a,
+    body.light-mode .logo {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">CS Passion</div>
+    <nav>
+      <a href="sit.html">Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="projects.html">Projects</a>
+      <a href="submit.html">Submit</a>
+      <span class="emoji-toggle" onclick="toggleTheme()">🌙 / ☀️</span>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Articles</h2>
+    <p>Coming soon!</p>
+  </div>
+
+  <footer>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="submit.html">Submit a Project</a>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle("light-mode");
+    }
+  </script>
+
+</body>
+</html>

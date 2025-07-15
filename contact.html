@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS Passion | Contact</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    :root {
+      --bg-color: #fdfcfb;
+      --text-color: #222;
+      --nav-color: #f56642;
+      --footer-bg: #000;
+      --footer-text: white;
+    }
+
+    [data-theme="dark"] {
+      --bg-color: #121212;
+      --text-color: #f0f0f0;
+      --nav-color: #333;
+      --footer-bg: #000;
+      --footer-text: #ccc;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      background-color: var(--nav-color);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .logo-text .curly {
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+      margin-right: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: var(--text-color);
+      font-weight: bold;
+    }
+
+    .toggle-btn {
+      margin-left: 20px;
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: var(--text-color);
+    }
+
+    .content {
+      flex-grow: 1;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .content h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 18px;
+    }
+
+    .footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 20px 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .footer a {
+      color: var(--footer-text);
+      text-decoration: none;
+      margin: 5px 15px;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo-text">
+      <span class="curly">𝒞𝓈</span> Passion
+    </div>
+    <div class="nav-links">
+      <a href="sit.html">🏠 Home</a>
+      <a href="articles.html">Articles</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About Us</a>
+      <button class="toggle-btn" id="themeToggle">🌙</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <h1>Contact Us</h1>
+    <p>For questions, feedback, or suggestions — feel free to reach out.</p>
+    <p><strong>Email:</strong> <a href="mailto:cspassionbhs@gmail.com">cspassionbhs@gmail.com</a></p>
+  </div>
+
+  <div class="footer">
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="submit.html">Submit a Project</a>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    root.setAttribute('data-theme', savedTheme);
+    themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const newTheme = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+  </script>
+</body>
+</html>
+
