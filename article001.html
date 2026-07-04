@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Article #001 | CS Passion</title>
+
+  <style>
+    :root {
+      --bg-dark:#121212;
+      --bg-light:#ffffff;
+      --text-dark:#ffffff;
+      --text-light:#000000;
+      --accent:#f56642;
+      --article-dark:#1d1d1d;
+      --article-light:#f5f5f5;
+    }
+
+    body{
+      margin:0;
+      padding:0;
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      background:var(--bg-dark);
+      color:var(--text-dark);
+      transition:.3s;
+    }
+
+    header{
+      background:var(--accent);
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:bold;
+      color:#000;
+    }
+
+    nav a{
+      color:#000;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      text-decoration:underline;
+    }
+
+    .emoji-toggle{
+      cursor:pointer;
+      font-size:20px;
+      margin-left:20px;
+    }
+
+    .container{
+      max-width:850px;
+      margin:auto;
+      padding:50px 25px;
+    }
+
+    .badge{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:6px 14px;
+      border-radius:20px;
+      font-size:14px;
+      font-weight:bold;
+      margin-bottom:18px;
+    }
+
+    .article-box{
+      background:var(--article-dark);
+      padding:40px;
+      border-radius:12px;
+      line-height:1.8;
+      transition:.3s;
+    }
+
+    h1{
+      margin-top:0;
+      font-size:38px;
+      line-height:1.2;
+    }
+
+    .meta{
+      color:#bbbbbb;
+      margin-bottom:35px;
+      font-size:15px;
+    }
+
+    h3{
+      color:var(--accent);
+      margin-top:35px;
+    }
+
+    p{
+      text-align:justify;
+      font-size:17px;
+    }
+
+    footer{
+      background:#000;
+      padding:1.5rem;
+      text-align:center;
+      margin-top:40px;
+    }
+
+    footer a{
+      color:var(--accent);
+      margin:0 1rem;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    footer a:hover{
+      text-decoration:underline;
+    }
+
+    body.light-mode{
+      background:var(--bg-light);
+      color:var(--text-light);
+    }
+
+    body.light-mode .article-box{
+      background:var(--article-light);
+    }
+
+    body.light-mode nav a,
+    body.light-mode .logo{
+      color:#000;
+    }
+
+    body.light-mode .meta{
+      color:#666;
+    }
+
+    body.light-mode footer{
+      background:#f0f0f0;
+    }
+
+    body.light-mode footer a{
+      color:var(--accent);
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">CS Passion</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="articles.html">Articles</a>
+<a href="projects.html">Projects</a>
+<a href="submit.html">Submit</a>
+<span class="emoji-toggle" onclick="toggleTheme()">🌙 / ☀️</span>
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="badge">
+ARTICLE #001
+</div>
+
+<div class="article-box">
+
+<h1>AI & RAM Price Hike of 2025–26</h1>
+
+<div class="meta">
+By <strong>Daniyal Nasir Khan</strong><br>
+Published July 4, 2026 • 3:30 PM • Technology
+</div>
+
+<p>
+Right now, anyone who has been using any sort of technology, or has been on the internet has probably come across what many are calling the <strong>"RAMpocalypse."</strong> The purpose of this article is to help readers understand why RAM prices have increased so dramatically and what role Artificial Intelligence has played in it.
+</p>
+
+<p>
+Before looking at the economic side of the story, it is important to understand the technology behind it. Even a year and a half ago, RAM was one of the few PC components people rarely worried about when budgeting a build. Whether DDR4 or DDR5, RAM prices were nowhere near as concerning as GPUs, despite AI already experiencing significant growth.
+</p>
+
+<p>
+The core problem is that AI training models and the device you are reading this article on do not use memory in the same way. This phenomenon has been labelled the <strong>"HBM Siphon Effect."</strong> Traditional RAM connects to a CPU through the motherboard, whereas High Bandwidth Memory (HBM) stacks memory chips vertically and places them directly beside powerful AI processors such as NVIDIA GPUs. This provides the enormous data bandwidth required to train Large Language Models (LLMs) such as GPT-4.
+</p>
+
+<p>
+This brings us to RAM production. The global memory market is dominated by three manufacturers: Samsung, SK Hynix and Micron. Producing HBM requires significantly more manufacturing resources than standard DRAM because of its complexity.
+</p>
+
+<p>
+As AI companies began investing billions of dollars into AI infrastructure, manufacturers shifted a significant portion of their production towards HBM. This reduced the supply of conventional consumer RAM, resulting in noticeable price increases for products such as DDR5 memory kits.
+</p>
+
+<p>
+Social media quickly reacted to the situation. Users joked in the comments of AI-generated videos with remarks such as <em>"RAM costs ten times more because of this, by the way..."</em>
+</p>
+
+<p>
+According to industry analysts, RAM prices are expected to continue increasing throughout the later quarters of 2026, with forecasts ranging from approximately 3% to as much as 40%, depending on market demand and manufacturing capacity.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="submit.html">Submit a Project</a>
+
+</footer>
+
+<script>
+function toggleTheme(){
+document.body.classList.toggle("light-mode");
+}
+</script>
+
+</body>
+</html>
