@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Article #001 | CS Passion</title>
+
+  <style>
+    :root {
+      --bg-dark:#121212;
+      --bg-light:#ffffff;
+      --text-dark:#ffffff;
+      --text-light:#000000;
+      --accent:#f56642;
+      --article-dark:#1d1d1d;
+      --article-light:#f5f5f5;
+    }
+
+    body{
+      margin:0;
+      padding:0;
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      background:var(--bg-dark);
+      color:var(--text-dark);
+      transition:.3s;
+    }
+
+    header{
+      background:var(--accent);
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:bold;
+      color:#000;
+    }
+
+    nav a{
+      color:#000;
+      text-decoration:none;
+      margin-left:20px;
+      font-weight:bold;
+    }
+
+    nav a:hover{
+      text-decoration:underline;
+    }
+
+    .emoji-toggle{
+      cursor:pointer;
+      font-size:20px;
+      margin-left:20px;
+    }
+
+    .container{
+      max-width:850px;
+      margin:auto;
+      padding:50px 25px;
+    }
+
+    .badge{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:6px 14px;
+      border-radius:20px;
+      font-size:14px;
+      font-weight:bold;
+      margin-bottom:18px;
+    }
+
+    .article-box{
+      background:var(--article-dark);
+      padding:40px;
+      border-radius:12px;
+      line-height:1.8;
+      transition:.3s;
+    }
+
+    h1{
+      margin-top:0;
+      font-size:38px;
+      line-height:1.2;
+    }
+
+    .meta{
+      color:#bbbbbb;
+      margin-bottom:35px;
+      font-size:15px;
+    }
+
+    h3{
+      color:var(--accent);
+      margin-top:35px;
+    }
+
+    p{
+      text-align:justify;
+      font-size:17px;
+    }
+
+    footer{
+      background:#000;
+      padding:1.5rem;
+      text-align:center;
+      margin-top:40px;
+    }
+
+    footer a{
+      color:var(--accent);
+      margin:0 1rem;
+      text-decoration:none;
+      font-weight:bold;
+    }
+
+    footer a:hover{
+      text-decoration:underline;
+    }
+
+    body.light-mode{
+      background:var(--bg-light);
+      color:var(--text-light);
+    }
+
+    body.light-mode .article-box{
+      background:var(--article-light);
+    }
+
+    body.light-mode nav a,
+    body.light-mode .logo{
+      color:#000;
+    }
+
+    body.light-mode .meta{
+      color:#666;
+    }
+
+    body.light-mode footer{
+      background:#f0f0f0;
+    }
+
+    body.light-mode footer a{
+      color:var(--accent);
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">CS Passion</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="articles.html">Articles</a>
+<a href="projects.html">Projects</a>
+<a href="submit.html">Submit</a>
+<span class="emoji-toggle" onclick="toggleTheme()">🌙 / ☀️</span>
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="badge">
+ARTICLE #002
+</div>
+
+<div class="article-box">
+
+<h1>SpaceX's revolution in the orbit: Starlink</h1>
+
+<div class="meta">
+By <strong>Daniyal Nasir Khan</strong><br>
+Published July 13, 2026 • 10:45 PM • Technology
+</div>
+
+<p>
+SpaceX started in 2002 with the ambition of making humanity multi-planetary, something seemed and considered quite impractical, and to many, impossible. They took their first shot with just one rocket, today, two decades later, they are not just launching rockets into space, but sending internet connection down to earth from up there as well by their product company, Starlink.
+</p>
+
+<p>
+Starlink is upfront just a satellite company providing connection to earthians, but their recent progress is nothing less than incredible and revoloutionary.
+</p>
+
+<p>
+Traditional satellite internet operates usually via satellites 35000 kilometers above earth, because they are so far away, light takes a long time to travel back and forth, resulting in quite poor latency, and simply “slow connection”.
+</p>
+
+<p>
+In comparison, starlink operates less than 600 kilometers above the earth, because they are so close, the round-trip time for data drops drastically. Recent tests show latency of only about 25 milliseconds, low and good enough for seamless video calls and even competitive gaming.
+</p>
+
+<p>
+For the 2026 era, they are upgrading to the Terabit era, with their new Starlink V3. Each V3 satellite delivers a staggering 1 terabit per second (1,000+ Gbps) of downlink capacity. That is a 10x jump over the previous generation. Instead of just bouncing signals from the ground to a satellite and back down, these satellites use optical laser inter-satellite links (ISLs). They talk to each other in space, creating a giant routing mesh network.
+</p>
+
+<p>
+This is probably the coolest "sci-fi" feature to include. SpaceX has launched over 650 dedicated Direct-to-Cell satellites. These act like space-based cell towers, allowing normal, unmodified smartphones to connect directly to satellites for texting, voice, and data when you're completely out of range of ground cell towers. It’s a massive breakthrough for emergency services and remote areas.
+</p>
+
+<p>
+<i>Source: Starlink</i>
+</p>
+
+</div>
+
+<footer>
+
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="submit.html">Submit a Project</a>
+
+</footer>
+
+<script>
+function toggleTheme(){
+document.body.classList.toggle("light-mode");
+}
+</script>
+
+</body>
+</html>
