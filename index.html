@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CS Passion | Home</title>
+
   <style>
     :root {
       --bg-dark: #121212;
@@ -78,22 +79,107 @@
       margin-left: 20px;
     }
 
+    /* Updated center section */
+
     .main-content {
       flex: 1;
       padding: 3rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
-    .main-content h1 {
+    .text-slider {
+      width: min(800px, 100%);
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.65s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 0;
+    }
+
+    .slide-label {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .slide h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       color: #fff;
     }
 
-    .main-content p {
+    .slide p {
       font-size: 1.2rem;
+      line-height: 1.7;
       max-width: 700px;
       margin: auto;
+    }
+
+    .slide-highlight {
+      color: var(--accent);
+    }
+
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .arrow {
+      border: none;
+      background: var(--accent);
+      color: white;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 22px;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .arrow:hover {
+      transform: scale(1.08);
+      opacity: 0.9;
+    }
+
+    .dots {
+      display: flex;
+      gap: 9px;
+      align-items: center;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border: none;
+      border-radius: 50%;
+      background: #888;
+      cursor: pointer;
+      padding: 0;
+      transition: 0.2s ease;
+    }
+
+    .dot.active {
+      background: var(--accent);
+      transform: scale(1.3);
     }
 
     footer {
@@ -115,6 +201,7 @@
     }
 
     /* Light mode */
+
     body.light-mode {
       background-color: var(--bg-light);
       color: var(--text-light);
@@ -126,7 +213,7 @@
       color: #000;
     }
 
-    body.light-mode .main-content h1 {
+    body.light-mode .slide h1 {
       color: #000;
     }
 
@@ -137,15 +224,57 @@
     body.light-mode footer a {
       color: #f56642;
     }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 1rem;
+      }
+
+      nav {
+        margin-top: 15px;
+        gap: 12px;
+      }
+
+      nav a {
+        margin-left: 0;
+      }
+
+      .emoji-toggle {
+        margin-left: 0;
+      }
+
+      .main-content {
+        padding: 2rem 1.2rem;
+      }
+
+      .slide h1 {
+        font-size: 2rem;
+      }
+
+      .slide p {
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .slides {
+        transition: none;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <header>
     <div class="logo-container">
       <div class="logo">CS Passion</div>
-      <div class="quote">"No amount of money ever bought a second of time." — Howard Stark</div>
+      <div class="quote">
+        "No amount of money ever bought a second of time." - Howard Stark
+      </div>
     </div>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="articles.html">Articles</a>
@@ -155,11 +284,82 @@
     </nav>
   </header>
 
+  <!-- Updated center content -->
+
   <div class="main-content">
-    <h1>Welcome to CS Passion</h1>
-    <p>
-      This is a platform for students to share their computer science projects and articles with the school and the broader community. Explore amazing work, read insightful content, or submit your own ideas and innovations.
-    </p>
+
+    <div class="text-slider">
+
+      <div class="slides" id="slides">
+
+        <!-- SLIDE 1 -->
+        <div class="slide">
+          <div class="slide-label">Welcome</div>
+
+          <h1>
+            Welcome to <span class="slide-highlight">CS Passion</span>
+          </h1>
+
+          <p>
+            This is a platform for students to share their computer science
+            projects and articles with the school and the broader community.
+          </p>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="slide">
+          <div class="slide-label">Explore</div>
+
+          <h1>
+            Discover Amazing <span class="slide-highlight">Work</span>
+          </h1>
+
+          <p>
+            Explore amazing student projects, read insightful content,
+            and discover the creativity and innovation of our community.
+          </p>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="slide">
+          <div class="slide-label">Share</div>
+
+          <h1>
+            Have an Idea? <span class="slide-highlight">Share It.</span>
+          </h1>
+
+          <p>
+            Submit your own ideas and innovations. Your work could inspire
+            students both inside and outside school.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="slider-controls">
+
+        <button
+          class="arrow"
+          id="previousButton"
+          aria-label="Previous slide"
+        >
+          ❮
+        </button>
+
+        <div class="dots" id="dots"></div>
+
+        <button
+          class="arrow"
+          id="nextButton"
+          aria-label="Next slide"
+        >
+          ❯
+        </button>
+
+      </div>
+
+    </div>
+
   </div>
 
   <footer>
@@ -172,8 +372,102 @@
     function toggleTheme() {
       document.body.classList.toggle("light-mode");
     }
+
+    const slidesContainer = document.getElementById("slides");
+    const slides = document.querySelectorAll(".slide");
+    const dotsContainer = document.getElementById("dots");
+
+    const previousButton = document.getElementById("previousButton");
+    const nextButton = document.getElementById("nextButton");
+
+    let currentSlide = 0;
+    let autoSlide;
+
+    // Create navigation dots
+    slides.forEach((slide, index) => {
+      const dot = document.createElement("button");
+
+      dot.classList.add("dot");
+      dot.setAttribute("aria-label", `Go to slide ${index + 1}`);
+
+      dot.addEventListener("click", () => {
+        currentSlide = index;
+        updateSlider();
+        restartAutoSlide();
+      });
+
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll(".dot");
+
+    function updateSlider() {
+      slidesContainer.style.transform =
+        `translateX(-${currentSlide * 100}%)`;
+
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentSlide);
+      });
+    }
+
+    function nextSlide() {
+      currentSlide++;
+
+      if (currentSlide >= slides.length) {
+        currentSlide = 0;
+      }
+
+      updateSlider();
+    }
+
+    function previousSlide() {
+      currentSlide--;
+
+      if (currentSlide < 0) {
+        currentSlide = slides.length - 1;
+      }
+
+      updateSlider();
+    }
+
+    function startAutoSlide() {
+      autoSlide = setInterval(() => {
+        nextSlide();
+      }, 5000);
+    }
+
+    function restartAutoSlide() {
+      clearInterval(autoSlide);
+      startAutoSlide();
+    }
+
+    nextButton.addEventListener("click", () => {
+      nextSlide();
+      restartAutoSlide();
+    });
+
+    previousButton.addEventListener("click", () => {
+      previousSlide();
+      restartAutoSlide();
+    });
+
+    // Keyboard controls
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowRight") {
+        nextSlide();
+        restartAutoSlide();
+      }
+
+      if (event.key === "ArrowLeft") {
+        previousSlide();
+        restartAutoSlide();
+      }
+    });
+
+    // Start the slider
+    updateSlider();
+    startAutoSlide();
   </script>
 
 </body>
 </html>
-
